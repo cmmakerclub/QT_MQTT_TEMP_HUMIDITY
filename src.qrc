@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../../../Temppic.jpg</file>
+        <file>../../../thermometer.png</file>
+        <file>../../../thermometer-42px.png</file>
+    </qresource>
+</RCC>
