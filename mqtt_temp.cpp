@@ -30,6 +30,7 @@ MQTT_TEMP::MQTT_TEMP(QMQTT::Client *client,QWidget *parent) :
     //ui->hudlabel->setStyleSheet("QLabel {color:white;font-size:36px}");
     ui->hud1la->setStyleSheet("QLabel {color:white;font-size:36px}");
     ui->time1la->setStyleSheet("QLabel {color:white;font-size:10px}");
+    ui->datela->setStyleSheet("QLabel {color:white;font-size:12px}");
 }
 MQTT_TEMP::~MQTT_TEMP()
 {
@@ -44,8 +45,11 @@ void MQTT_TEMP::onMQTT_Received(const QMQTT::Message &message)
       ui->temp1la->setText(tr("%1 ᴼC").arg(data2[0]));
       ui->hud1la->setText(tr("%1 %").arg(data2[1]));
       QTime time = QTime::currentTime();
+      QDateTime date = QDateTime::currentDateTime();
       QString time_text = time.toString("hh : mm : ss");
+      QString date_text = date.toString("dddd : dd : MMM : yyyy");
       ui->time1la->setText(time_text);
+      ui->datela->setText(date_text);
     qDebug() << data2[0] << endl;
     qDebug() << data2[1] << endl;
 }

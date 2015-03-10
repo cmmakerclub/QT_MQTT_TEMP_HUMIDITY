@@ -96,10 +96,24 @@ background-color: red;</string>
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QLabel" name="datela">
+    <property name="geometry">
+     <rect>
+      <x>87</x>
+      <y>212</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
    <zorder>hud1la</zorder>
    <zorder>temp1la</zorder>
    <zorder>pic1la</zorder>
    <zorder>time1la</zorder>
+   <zorder>datela</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

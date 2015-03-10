@@ -29,6 +29,7 @@ public:
     QLabel *temp1la;
     QLabel *hud1la;
     QLabel *time1la;
+    QLabel *datela;
     QToolBar *mainToolBar;
 
     void setupUi(QMainWindow *MQTT_TEMP)
@@ -62,11 +63,15 @@ public:
         time1la = new QLabel(centralWidget);
         time1la->setObjectName(QStringLiteral("time1la"));
         time1la->setGeometry(QRect(240, 210, 71, 21));
+        datela = new QLabel(centralWidget);
+        datela->setObjectName(QStringLiteral("datela"));
+        datela->setGeometry(QRect(87, 212, 141, 20));
         MQTT_TEMP->setCentralWidget(centralWidget);
         hud1la->raise();
         temp1la->raise();
         pic1la->raise();
         time1la->raise();
+        datela->raise();
         mainToolBar = new QToolBar(MQTT_TEMP);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MQTT_TEMP->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -83,6 +88,7 @@ public:
         temp1la->setText(QString());
         hud1la->setText(QApplication::translate("MQTT_TEMP", "TextLabel", 0));
         time1la->setText(QApplication::translate("MQTT_TEMP", "TextLabel", 0));
+        datela->setText(QApplication::translate("MQTT_TEMP", "TextLabel", 0));
     } // retranslateUi
 
 };
