@@ -80,7 +80,7 @@ background-color: red;</string>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="time1la">
@@ -93,7 +93,7 @@ background-color: red;</string>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="datela">
@@ -106,7 +106,7 @@ background-color: red;</string>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
    <zorder>hud1la</zorder>

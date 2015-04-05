@@ -15,8 +15,6 @@ target.path = /home/pi
 INSTALLS = target
 TEMPLATE = app
 
-
-
 SOURCES += main.cpp\
         mqtt_temp.cpp
 
@@ -24,9 +22,9 @@ HEADERS  += mqtt_temp.h
 
 FORMS    += mqtt_temp.ui
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../qmqtt/qmqtt/release/ -lqmqtt
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../qmqtt/qmqtt/debug/ -lqmqtt
-else:unix: LIBS += -L$$PWD/../../qmqtt/qmqtt/ -lqmqtt
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../qmqtt/release/ -lqmqtt
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../qmqtt/debug/ -lqmqtt
+else:unix: LIBS += -L$$PWD/../qmqtt -lqmqtt
 
-INCLUDEPATH += $$PWD/../../qmqtt/qmqtt
-DEPENDPATH += $$PWD/../../qmqtt/qmqtt
+INCLUDEPATH += $$PWD/../qmqtt
+DEPENDPATH += $$PWD/../qmqtt

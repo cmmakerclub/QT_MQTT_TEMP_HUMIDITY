@@ -17,7 +17,8 @@ MQTT_TEMP::MQTT_TEMP(QMQTT::Client *client,QWidget *parent) :
     _client->setKeepAlive(300);
     _client->setCleansess(1);
     _client->connect();
-    qDebug() << "connected";
+
+
     connect(_client,SIGNAL(connected()),this,SLOT(onMQTT_Connected()));
     connect(_client,SIGNAL(connacked(quint8)),this,SLOT(onMQTT_Connacked(quint8)));
     connect(_client,SIGNAL(subscribed(const QString &)), this, SLOT(onSubscribed(const QString &)));
@@ -54,9 +55,9 @@ void MQTT_TEMP::onMQTT_Received(const QMQTT::Message &message)
     qDebug() << data2[1] << endl;
 }
 void MQTT_TEMP::onMQTT_Connected(){
+        qDebug() << "connected";
 //        log(tr("Connected to %1 on port %2").arg(_client->host()).arg(_client->port()));
         _client->subscribe("cmmc/Dragon",0);
-        qDebug() << "Sub Completed";
 }
 void MQTT_TEMP::onMQTT_Connacked(quint8 ack)
 {
@@ -84,17 +85,26 @@ void MQTT_TEMP::onMQTT_Connacked(quint8 ack)
 //    log(tr("connacked = %1 : %2").arg(ack).arg(ackStatus));
     qDebug() << "connacked =" << ack << ":" << ackStatus;
 }
-//void MQTT_TEMP::log(const QString & msg)
-//{
-//    ui->textBrowser->append(msg);
-//}
 void MQTT_TEMP::onSubscribed(const QString &topic)
 {
-//    log(tr("subscribed on %1").arg(topic));
+
+    qDebug() << "Subscribed";
     qDebug() << topic;
 }
+
 void MQTT_TEMP::onMQTT_subacked(quint16 msgid, quint8 qos)
 {
 //    log(tr("subacked: msgid=%1, qos=%2").arg(msgid).arg(qos));
     qDebug() << "subacked:" << msgid << ":" << qos;
 }
+
+void MQTT_TEMP::log(const QString & msg)
+{
+   qDebug() << msg << endl;
+}
+
+
+//void MQTT_TEMP::log(const QString & msg)
+//{
+//    ui->textBrowser->append(msg);
+//}
